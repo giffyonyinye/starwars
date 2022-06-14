@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#031434] p-4 h-screen md:h-auto">
+    <div class="bg-[#031434] p-4 h-full md:h-auto">
         <img class="w-[107px] m-auto" src="../../../assets/svg/starwars-logo.svg" alt="starwars">
 
         <div class="pl-6 mt-11">
