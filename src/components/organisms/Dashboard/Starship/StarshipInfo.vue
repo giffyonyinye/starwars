@@ -8,7 +8,7 @@
                     <img src="../../../../assets/png/starship.png" alt="specie">
                 </div>
                 <div class="ml-10">
-                    <h1 class="text-[38px] font-extrabold">{{name}}</h1>
+                    <h1 class="text-[38px] font-extrabold">{{name}}<i v-if="isLoading" class="fa fa-spinner fa-spin"></i></h1>
                     <div class="text-[16px]">
                         <p>Model: <span>{{starship.model}}</span></p>
                         <p class="mt-2">Passengers: <span>{{starship.passengers}}</span></p>
@@ -38,7 +38,8 @@ export default {
     data() {
         return {
             text: "< Back",
-            starship:[]
+            starship:[],
+            isLoading:false
         }
     },
 
@@ -48,6 +49,7 @@ export default {
 
     methods: {
         getStarshipInfo() {
+            this.isLoading = true
             axios({
                 method:"GET",
                 url:`${url}/starships/9/`,
@@ -55,6 +57,7 @@ export default {
             })
             .then((res) => {
                 this.starship = res.data;
+                this.isLoading = false
             })
             .catch((err) => {
                 console.log(err)

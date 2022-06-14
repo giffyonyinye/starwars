@@ -1,7 +1,7 @@
 <template>
     <div class="mt-6 pl-10 pr-10">
         <div>
-            <p class="text-[#A4A7B7]">Species</p>
+            <p class="text-[#A4A7B7]">Species <i v-if="isLoading" class="fa fa-spinner fa-spin"></i></p>
         </div>
         <div class="overflow-x-hidden">
             <table class="p-4 w-full border mt-8 text-[16px] table-auto">
@@ -39,7 +39,8 @@ export default {
     name:"SpecieData",
     data() {
         return  {
-            species: []
+            species: [],
+            isLoading:false
         }
     },
 
@@ -52,6 +53,7 @@ export default {
             return moment(date);
         },
         getSpecies() {
+            this.isLoading = true
             axios({
                 method:"GET",
                 url:`${url}/species`,
@@ -59,6 +61,7 @@ export default {
             })
             .then((res) => {
                 this.species = res.data.results;
+                this.isLoading = false
             })
             .catch((err) => {
                 console.log(err)

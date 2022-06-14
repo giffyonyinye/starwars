@@ -8,7 +8,8 @@
                     <img src="../../../../assets/png/film.png" alt="specie">
                 </div>
                 <div class="ml-10">
-                    <h1 class="text-[38px] font-extrabold">{{name}}</h1>
+                    <h1 class="text-[38px] font-extrabold">{{name}} <i v-if="isLoading" class="fa fa-spinner fa-spin"></i></h1>
+                    
                     <div class="text-[16px]">
                         <p>Director: <span>{{film.director}}</span></p>
                         <p class="mt-2">Producer: <span>{{film.producer}}</span></p>
@@ -38,7 +39,8 @@ export default {
     data() {
         return {
             text: "< Back",
-            film:[]
+            film:[],
+            isLoading: false
         }
     },
 
@@ -48,6 +50,7 @@ export default {
 
     methods: {
         getFilmInfo() {
+            this.isLoading = true
             axios({
                 method:"GET",
                 url:`${url}/films/1`,
@@ -55,6 +58,7 @@ export default {
             })
             .then((res) => {
                 this.film = res.data;
+                this.isLoading = false
             })
             .catch((err) => {
                 console.log(err)

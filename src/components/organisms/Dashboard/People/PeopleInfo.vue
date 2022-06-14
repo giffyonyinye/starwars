@@ -8,7 +8,7 @@
                     <img src="../../../../assets/png/people.png" alt="specie">
                 </div>
                 <div class="ml-10">
-                    <h1 class="text-[38px] font-extrabold">{{name}}</h1>
+                    <h1 class="text-[38px] font-extrabold">{{name}} <i v-if="isLoading" class="fa fa-spinner fa-spin"></i></h1>
                     <div class="text-[16px]">
                         <p>Gender: <span>{{people.gender}}</span></p>
                         <p class="mt-2">Year of Birth: <span>{{people.birth_year}}</span></p>
@@ -39,7 +39,8 @@ export default {
     data() {
         return {
             text: "< Back",
-            people:[]
+            people:[],
+            isLoading:false
         }
     },
 
@@ -49,6 +50,7 @@ export default {
 
     methods: {
         getPeople() {
+            this.isLoading = true
             axios({
                 method:"GET",
                 url:`${url}/people/1/`,
@@ -56,6 +58,7 @@ export default {
             })
             .then((res) => {
                 this.people = res.data;
+                this.isLoading = false
             })
             .catch((err) => {
                 console.log(err)

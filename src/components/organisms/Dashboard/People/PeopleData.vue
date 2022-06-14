@@ -1,7 +1,7 @@
 <template>
     <div class="mt-6 pl-10 pr-10">
         <div>
-            <p class="text-[#A4A7B7]">People</p>
+            <p class="text-[#A4A7B7]">People <i v-if="isLoading" class="fa fa-spinner fa-spin"></i></p>
         </div>
         <div class="overflow-x-hidden">
             <table class="p-4 w-full border mt-8 text-[16px] table-auto">
@@ -39,7 +39,8 @@ export default {
     name:"PeopleData",
     data() {
         return  {
-            people: []
+            people: [],
+            isLoading: false
         }
     },
 
@@ -52,6 +53,7 @@ export default {
             return moment(date);
         },
         getPeople() {
+            this.isLoading = true
             axios({
                 method:"GET",
                 url:`${url}/people`,
@@ -59,7 +61,7 @@ export default {
             })
             .then((res) => {
                 this.people = res.data.results;
-                console.log(res.data.results)
+                this.isLoading = false
             })
             .catch((err) => {
                 console.log(err)

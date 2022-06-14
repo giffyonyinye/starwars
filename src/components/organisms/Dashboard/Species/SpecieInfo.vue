@@ -8,7 +8,7 @@
                     <img src="../../../../assets/png/specie.png" alt="specie">
                 </div>
                 <div class="ml-10">
-                    <h1 class="text-[38px] font-extrabold">{{name}}</h1>
+                    <h1 class="text-[38px] font-extrabold">{{name}} <i v-if="isLoading" class="fa fa-spinner fa-spin"></i></h1>
                     <div class="text-[16px]">
                         <p>Designation: <span>{{specie.designation}}</span></p>
                         <p class="mt-2">Language: <span>{{specie.language}}</span></p>
@@ -39,7 +39,8 @@ export default {
     data() {
         return {
             text: "< Back",
-            specie:[]
+            specie:[],
+            isLoading: false
         }
     },
 
@@ -49,6 +50,7 @@ export default {
 
     methods: {
         getSpecie() {
+            this.isLoading = true
             axios({
                 method:"GET",
                 url:`${url}/species/3`,
@@ -56,6 +58,7 @@ export default {
             })
             .then((res) => {
                 this.specie = res.data;
+                this.isLoading = false
             })
             .catch((err) => {
                 console.log(err)

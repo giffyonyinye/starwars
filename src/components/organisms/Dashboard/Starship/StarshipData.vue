@@ -1,7 +1,7 @@
 <template>
     <div class="mt-6 pl-10 pr-10">
         <div>
-            <p class="text-[#A4A7B7]">Starships</p>
+            <p class="text-[#A4A7B7]">Starships <i v-if="isLoading" class="fa fa-spinner fa-spin"></i></p>
         </div>
         <div class="overflow-x-hidden">
             <table class="p-4 w-full border mt-8 text-[16px] table-auto">
@@ -38,7 +38,8 @@ export default {
     name:"StarshipData",
     data() {
         return  {
-            starships: []
+            starships: [],
+            isLoading: false
         }
     },
 
@@ -48,6 +49,7 @@ export default {
 
     methods: {
         getStarships() {
+            this.isLoading = true
             axios({
                 method:"GET",
                 url:`${url}/starships`,
@@ -55,7 +57,7 @@ export default {
             })
             .then((res) => {
                 this.starships = res.data.results;
-                console.log(res.data.results)
+                this.isLoading = false;
             })
             .catch((err) => {
                 console.log(err)

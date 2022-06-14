@@ -1,7 +1,7 @@
 <template>
     <div class="mt-6 pl-10 pr-10">
         <div>
-            <p class="text-[#A4A7B7]">Film</p>
+            <p class="text-[#A4A7B7]">Film <i v-if="isLoading" class="fa fa-spinner fa-spin"></i></p>
         </div>
         <div class="overflow-x-hidden">
             <table class="p-4 w-full border border-separate mt-8 text-[16px] table-auto">
@@ -38,7 +38,8 @@ export default {
     name:"FilmView",
     data() {
         return  {
-            film: []
+            film: [],
+            isLoading:false
         }
     },
 
@@ -48,6 +49,7 @@ export default {
 
     methods: {
         getFilms() {
+            this.isLoading = true
             axios({
                 method:"GET",
                 url:`${url}/films`,
@@ -55,6 +57,7 @@ export default {
             })
             .then((res) => {
                 this.film = res.data.results;
+                this.isLoading = false
             })
             .catch((err) => {
                 console.log(err)
