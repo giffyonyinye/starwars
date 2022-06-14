@@ -5,7 +5,7 @@
       </div>
       <div class="w-full">
         <div class="h-full flex items-center justify-center">
-          <div class="w-1/2 lg:w-full pl-16 pr-16 border pt-9">
+          <div class="w-1/2 lg:w-full md:border-0 pl-16 pr-16 border pt-9">
             <div>
               <h3>Login</h3>
               <p class="mt-2 text-[#737373]">Kindly enter your details to log in</p>
