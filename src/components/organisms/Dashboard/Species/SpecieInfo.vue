@@ -1,6 +1,6 @@
 <template>
-    <div class="flex" >
-        <div class="w-1/4">
+    <div class="flex md:flex-col" >
+        <div class="w-1/4 md:w-full">
             <NavBar/>
         </div>
         <div class="w-full">
@@ -9,8 +9,8 @@
                 <div>
                     <img src="../../../../assets/png/specie.png" alt="specie">
                 </div>
-                <div class="ml-10">
-                    <h1 class="text-[38px] font-extrabold">{{name}} <i v-if="isLoading" class="fa fa-spinner fa-spin"></i></h1>
+                <div class="ml-10 md:ml-4">
+                    <h1 class="text-[38px] md:text-[24px] font-extrabold">{{name}} <i v-if="isLoading" class="fa fa-spinner fa-spin"></i></h1>
                     <div class="text-[16px]">
                         <p>Designation: <span>{{specie.designation}}</span></p>
                         <p class="mt-2">Language: <span>{{specie.language}}</span></p>

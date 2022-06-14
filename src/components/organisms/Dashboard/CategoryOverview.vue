@@ -1,11 +1,11 @@
 <template>
-    <div class="flex justify-evenly pl-10 mt-11">
+    <div class="flex justify-evenly pl-10 mt-11 sm:grid sm:grid-cols-1 md:grid md:grid-cols-2 md:pl-2 ">
         <div v-for="data in categoryData" :key="data">
             <div class="p-6 shadow-lg rounded-lg">
                 <div>
                     <div class="flex justify-between">
                         <h3 class="text-[16px] font-bold">{{data.title}}</h3>
-                        <img :src="data.icon" alt="">
+                        <img :src="data.icon" alt="...">
                     </div>
                     <div class="mt-[23px]">
                         <p class="text-[16px] font-bold">{{data.count}}</p>
