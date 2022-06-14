@@ -3,8 +3,8 @@
         <div>
             <p class="text-[#A4A7B7]">Species <i v-if="isLoading" class="fa fa-spinner fa-spin"></i></p>
         </div>
-        <div class="overflow-x-hidden">
-            <table class="p-4 w-full border mt-8 text-[13px] table-auto">
+        <div class=" relative overflow-x-auto sm:rounded-lg">
+            <table class="p-4 w-full border mt-8 text-[13px] ">
                 <thead>
                     <tr class="text-[#A4A7B7] border border-b" style=" box-shadow:0px 0px 30px rgba(13, 47, 161, 0.07)">
                         <td class="px-6 py-3"><input class="mr-2" type="checkbox" name="check" id="check"></td>

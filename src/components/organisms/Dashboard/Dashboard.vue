@@ -1,6 +1,8 @@
 <template>
     <div class="flex" >
-        <NavBar/>
+        <div class="w-1/4">
+            <NavBar/>
+        </div>
         <div class="w-full">
            <Header/>
            <div>

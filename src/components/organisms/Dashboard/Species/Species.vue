@@ -1,8 +1,12 @@
 <template>
     <div class="flex" >
-        <NavBar/>
-        <div class="w-full">
-           <Header/>
+        <div class="w-1/4">
+            <NavBar/>
+        </div>
+        <div class="w-screen">
+            <div>
+            <Header/>
+            </div>
            <div>
                 <SpecieData/>
            </div>

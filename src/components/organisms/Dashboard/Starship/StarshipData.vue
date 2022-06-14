@@ -3,7 +3,7 @@
         <div>
             <p class="text-[#A4A7B7]">Starships <i v-if="isLoading" class="fa fa-spinner fa-spin"></i></p>
         </div>
-        <div class="overflow-x-hidden">
+        <div class="relative overflow-x-auto sm:rounded-lg">
             <table class="p-4 w-full border mt-8 text-[13px] table-auto">
                 <thead>
                     <tr class="text-[#A4A7B7] border border-b" style=" box-shadow:0px 0px 30px rgba(13, 47, 161, 0.07)">

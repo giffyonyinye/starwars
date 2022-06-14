@@ -1,6 +1,8 @@
 <template>
-    <div class="flex" >
-        <NavBar/>
+    <div class="flex">
+        <div class="w-1/4">
+            <NavBar/>
+        </div>
         <div class="w-full">
            <Header :text="text" />
             <div class="p-4 mt-6 flex">
