@@ -61,19 +61,31 @@ export default {
     return {
       email: "",
       password: "",
-      error: ""
+      error: "",
     }
   },
 
   methods:{
     login() {
-      if(!this.email || !this.password) {
-        this.error = "No field must be empty"
+      if(!this.email) {
+        this.error = "Email must not be empty"
         setTimeout(() => {
           this.error = ""
         }, 3000);
-      } else {
+      }else if(!this.password) {
+        this.error = "Password must not be empty"
+          setTimeout(() => {
+          this.error = ""
+        }, 3000);
+      }else if(this.password.length < 8 || this.password.search(/[0-9]/) < 0) {
+        setTimeout(() => {
+          this.error = ""
+        }, 3000);
+        this.error = "Password must include number"
+      }
+       else {
         this.$router.push("/dashboard")
+        
       }
     }
   }
