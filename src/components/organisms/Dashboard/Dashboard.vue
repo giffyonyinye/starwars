@@ -18,6 +18,11 @@ import Header from './Header.vue'
 import NavBar from "./NavBar.vue"
 export default {
     name:"DashBoard",
-    components:{NavBar, Header, CategoryOverview,Film}
+    components:{
+        NavBar, 
+        Header, 
+        CategoryOverview,
+        Film
+    }
 }
 </script>

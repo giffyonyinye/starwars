@@ -73,7 +73,7 @@ export default {
           this.error = ""
         }, 3000);
       } else {
-        this.$router.push("/dashbord")
+        this.$router.push("/dashboard")
       }
     }
   }
