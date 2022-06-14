@@ -13,7 +13,7 @@
 
 <script>
 import CategoryOverview from './CategoryOverview.vue'
-import Film from './Film.vue'
+import Film from './Film/Film.vue'
 import Header from './Header.vue'
 import NavBar from "./NavBar.vue"
 export default {

@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tr v-for="data in film" :key="data.id" class="border border-b">
-                    <td ><input class="mr-2" type="checkbox" name="check" id="check"></td>
+                    <td ><router-link :to="{name: 'film-info', params: {name:data.title}}" ><input class="mr-2" type="checkbox" name="check" id="check"></router-link></td>
                     <td>{{data.title}}</td>
                     <td  >{{data.release_date}}</td>
                     <td>{{data.director}}</td>
@@ -32,7 +32,7 @@
 
 <script>
 import axios from 'axios';
-import {baseUrl} from '../../../Config';
+import {baseUrl} from '../../../../Config';
 const url = baseUrl;
 export default {
     name:"FilmView",

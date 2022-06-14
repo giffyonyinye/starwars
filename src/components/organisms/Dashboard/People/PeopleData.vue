@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tr v-for="data in people" :key="data.id" class="border border-b p-2">
-                    <td ><input class="mr-2" type="checkbox" name="check" id="check"></td>
+                    <td ><router-link :to="{name: 'people-info', params: {name:data.name}}"><input class="mr-2" type="checkbox" name="check" id="check"></router-link></td>
                     <td>{{data.name}}</td>
                     <td  >{{data.birth_year}}</td>
                     <td>{{data.gender}}</td>
@@ -36,7 +36,7 @@ import moment from 'moment';
 import {baseUrl} from '../../../../Config';
 const url = baseUrl;
 export default {
-    name:"FilmView",
+    name:"PeopleData",
     data() {
         return  {
             people: []

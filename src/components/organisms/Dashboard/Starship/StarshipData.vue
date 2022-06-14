@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tr v-for="data in starships" :key="data.id" class="border border-b p-2">
-                    <td ><input class="mr-2" type="checkbox" name="check" id="check"></td>
+                    <td ><router-link :to="{name: 'starship-info', params: {name:data.name}}" ><input class="mr-2" type="checkbox" name="check" id="check"></router-link></td>
                     <td>{{data.name}}</td>
                     <td  >{{data.model}}</td>
                     <td>{{data.starship_class}}</td>
@@ -35,7 +35,7 @@ import axios from 'axios';
 import {baseUrl} from '../../../../Config';
 const url = baseUrl;
 export default {
-    name:"FilmView",
+    name:"StarshipData",
     data() {
         return  {
             starships: []

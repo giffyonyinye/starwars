@@ -1,7 +1,10 @@
 <template>
     <div>
-        <div>
-            <div class="flex justify-end pr-6 shadow-md pt-6 pb-4">
+        <div class="flex justify-between pr-6 shadow-md pb-4">
+                <div @click="goBack" class="flex items-center ml-6 cursor-pointer">
+                    {{text}}
+                </div>
+            <div class="flex pt-6 pb-4">
                 <div class="pr-10">
                     <img class="mt-1" src="../../../assets/svg/Shape.svg" alt="bell">
                 </div>
@@ -20,5 +23,12 @@
 <script>
 export default {
     name:"TheHeader",
+    props:['text'],
+
+    methods: {
+        goBack() {
+            this.$router.go(-1)
+        }
+    }
 }
 </script>

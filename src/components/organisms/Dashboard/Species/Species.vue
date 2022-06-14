@@ -15,7 +15,7 @@ import SpecieData from './SpecieData.vue'
 import Header from '../Header.vue'
 import NavBar from "../NavBar.vue"
 export default {
-    name:"SpecieP",
+    name:"SpecieView",
     components:{
         NavBar, 
         Header,

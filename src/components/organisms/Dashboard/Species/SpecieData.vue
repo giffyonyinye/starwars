@@ -1,7 +1,7 @@
 <template>
     <div class="mt-6 pl-10 pr-10">
         <div>
-            <p class="text-[#A4A7B7]">People</p>
+            <p class="text-[#A4A7B7]">Species</p>
         </div>
         <div class="overflow-x-hidden">
             <table class="p-4 w-full border mt-8 text-[16px] table-auto">
@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tr v-for="data in species" :key="data.id" class="border border-b p-2">
-                    <td ><input class="mr-2" type="checkbox" name="check" id="check"></td>
+                    <td ><router-link :to="{name: 'specie-info', params: {name:data.name}}" ><input class="mr-2" type="checkbox" name="check" id="check"></router-link></td>
                     <td>{{data.name}}</td>
                     <td  >{{data.classification}}</td>
                     <td>{{data.eye_colors}}</td>
@@ -36,7 +36,7 @@ import moment from 'moment';
 import {baseUrl} from '../../../../Config';
 const url = baseUrl;
 export default {
-    name:"FilmView",
+    name:"SpecieData",
     data() {
         return  {
             species: []
@@ -59,7 +59,6 @@ export default {
             })
             .then((res) => {
                 this.species = res.data.results;
-                console.log(res.data.results)
             })
             .catch((err) => {
                 console.log(err)
