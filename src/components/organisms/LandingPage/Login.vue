@@ -1,11 +1,11 @@
 <template>
     <div class="flex" style="height:100vh">
-      <div class="w-1/3 bg-[#031434] flex justify-center items-center h-full p-10">
+      <div class="w-1/3 md:hidden bg-[#031434] flex justify-center items-center h-full p-10">
           <img src="../../../assets/svg/starwars-logo.svg" alt="starwars">
       </div>
       <div class="w-full">
         <div class="h-full flex items-center justify-center">
-          <div class="w-1/2 pl-16 pr-16 border pt-9">
+          <div class="w-1/2 lg:w-full pl-16 pr-16 border pt-9">
             <div>
               <h3>Login</h3>
               <p class="mt-2 text-[#737373]">Kindly enter your details to log in</p>
