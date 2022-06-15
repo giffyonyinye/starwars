@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-6 pl-10 pr-10 md:pl-4">
+    <div class="mt-6 pl-10 pr-10 md:pl-4 mb-5">
         <div>
             <p class="text-[#A4A7B7]">Starships <i v-if="isLoading" class="fa fa-spinner fa-spin"></i></p>
         </div>
