@@ -1,6 +1,6 @@
 <template>
-    <div class="flex md:flex-col">
-        <div class="w-1/4 md:w-full">
+    <div class="flex lg:flex-col">
+        <div class="w-1/4 lg:w-full">
             <NavBar/>
         </div>
         <div class="w-full">
