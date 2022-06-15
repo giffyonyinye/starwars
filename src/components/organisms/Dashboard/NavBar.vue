@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#031434] p-4 h-[120vh] md:h-auto">
+    <div class="bg-[#031434] p-4 h-[120vh] lg:h-auto ">
         <img class="w-[107px] m-auto" src="../../../assets/svg/starwars-logo.svg" alt="starwars">
 
         <div class="pl-6 mt-11">
@@ -13,12 +13,12 @@
                 <router-link class="text-white ml-5"  to="/starships">Starships</router-link>
             </div>
 
-            <div class="flex p-4 rounded-sm text-[16px]" :class="{active: $route.name === 'people' || $route.name === 'people-info'}" >
+            <div class="flex p-4 rounded-sm text-[16px] lg:mt-2" :class="{active: $route.name === 'people' || $route.name === 'people-info'}" >
                 <img src="../../../assets/svg/purple.svg" alt="overview">
                 <router-link class="text-white ml-5"  to="/people">People</router-link>
             </div>
 
-            <div class="flex p-4 rounded-sm text-[16px]" :class="{active: $route.name === 'species' || $route.name === 'specie-info'}" >
+            <div class="flex p-4 rounded-sm text-[16px] lg:mt-2" :class="{active: $route.name === 'species' || $route.name === 'specie-info'}" >
                 <img src="../../../assets/svg/yellow.svg" alt="overview">
                 <router-link class="text-white ml-5"  to="/species">Species</router-link>
             </div>
